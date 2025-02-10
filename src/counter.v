@@ -25,9 +25,9 @@ module counter(
     output [7:0] cmpt  // 8-bit counter output
 );
 
-reg [7:0] cc;  // 8-bit register to hold the counter value
+reg [7:0] cc=8'b00000000;  // 8-bit register to hold the counter value
 
-always @(posedge clk or posedge rst) begin
+always @(posedge clk) begin
     if (rst) begin
         cc <= 8'b00000000;  // Reset counter to 0
     end else if (cc == 8'b11111111) begin
