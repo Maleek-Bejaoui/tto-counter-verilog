@@ -28,7 +28,7 @@ module counter(
 reg [7:0] cc=8'b00000000;  // 8-bit register to hold the counter value
 
 always @(posedge clk) begin
-    if (rst) begin
+    if (rst == 1'b1) begin
         cc <= 8'b00000000;  // Reset counter to 0
     end else if (cc == 8'b11111111) begin
         cc <= 8'b00000000;  // Reset counter to 0 when it reaches 255
